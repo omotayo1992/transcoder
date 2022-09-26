@@ -1,8 +1,8 @@
 resource "aws_s3_bucket" "input" {
-  bucket = "input-test-682360"
+  bucket = var.input_bucket_name
 }
 
 resource "aws_s3_bucket_acl" "input" {
   bucket = aws_s3_bucket.input.id
-  acl    = "private"
+  acl    = var.bucket_acl
 }
